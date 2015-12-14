@@ -15,6 +15,7 @@
 package com.recorda.recorda;
 
 import android.app.Activity;
+import android.app.Service;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
@@ -30,7 +31,7 @@ import com.google.android.gms.drive.Drive;
  * An abstract activity that handles authorization and connection to the Drive
  * services.
  */
-public abstract class BaseDemoActivity extends Activity implements
+public abstract class GoogleDriveBaseActivity extends Activity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 

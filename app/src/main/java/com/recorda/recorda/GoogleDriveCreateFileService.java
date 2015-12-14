@@ -14,10 +14,14 @@
 
 package com.recorda.recorda;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.drive.Drive;
 import com.google.android.gms.drive.DriveApi.DriveContentsResult;
@@ -35,8 +39,8 @@ import java.io.OutputStream;
 /**
  * An activity to illustrate how to create a file.
  */
-public class CreateFileActivity extends BaseDemoActivity {
-    private static final String TAG = "oss/CreateFileActivity";
+public class GoogleDriveCreateFileService extends GoogleDriveBaseActivity {
+    private static final String TAG = "oss/GoogleDriveCreateFileService";
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 

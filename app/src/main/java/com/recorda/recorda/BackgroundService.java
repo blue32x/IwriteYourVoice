@@ -87,7 +87,8 @@ public class BackgroundService extends Service {
             boolean isDriveOn = prefs.getBoolean("drive_on_flg",false);
             if(isDriveOn){
                 //Upload file into google drive
-                Intent intent = new Intent(getBaseContext(), CreateFileActivity.class);
+                Intent intent = new Intent(getBaseContext(), GoogleDriveCreateFileService.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         }

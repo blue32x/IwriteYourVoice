@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putBoolean("drive_on_flg", true);
                     editor.commit();
                     /*
-                    Intent intent = new Intent(getBaseContext(), CreateFileActivity.class);
+                    Intent intent = new Intent(getBaseContext(), GoogleDriveCreateFileService.class);
                     startActivity(intent);
                     */
 
