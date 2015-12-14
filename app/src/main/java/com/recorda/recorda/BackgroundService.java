@@ -31,13 +31,16 @@ public class BackgroundService extends Service {
     private Handler mHandler;
     private String mFilePath, mFileName = null;
     private GoogleApiClient client;
-    SharedPreferences prefs = getSharedPreferences("PrefName", MODE_PRIVATE);
-    SharedPreferences.Editor editor = prefs.edit();
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     //Methods
     @Override
     public void onCreate() {
         super.onCreate();
+
+        prefs = getSharedPreferences("PrefName", MODE_PRIVATE);
+        editor = prefs.edit();
 
         //Register hardware key pattern using SCREEN ON/OFF
         ScreenOnReceiver screenOnReceiver = new ScreenOnReceiver();

@@ -33,13 +33,16 @@ public class MainActivity extends AppCompatActivity {
     private GoogleApiClient client;
     AccessTokenTracker accessTokenTracker;
     AccessToken accessToken;
-    SharedPreferences prefs = getSharedPreferences("PrefName", MODE_PRIVATE);
-    SharedPreferences.Editor editor = prefs.edit();
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     //Methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        prefs = getSharedPreferences("PrefName", MODE_PRIVATE);
+        editor = prefs.edit();
 
         /* Facebook 관련 설정 */
         //facebook api 초기화 , view를 그리기 전에 해야 한다
@@ -54,16 +57,15 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Toast.makeText(getApplicationContext(), "Fb Login Success", Toast.LENGTH_LONG);
                 //여기서 부터 공유 게시글 올리는 부분
-                /*
-                shareDialog = new ShareDialog(act);
-                ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                        .setContentTitle("살려주시와요")
-                        .setContentDescription("하꾜에 갇팀")
-                        .setImageUrl(Uri.parse("http://cfile28.uf.tistory.com/image/2056A53D5139F7A301C2BA"))
-                        .build();
-                shareDialog.show(linkContent);
-                act.finish();
-                */
+
+                //shareDialog = new ShareDialog(act);
+               // ShareLinkContent linkContent = new ShareLinkContent.Builder()
+               //         .setContentTitle("살려주시와요")
+               //         .setContentDescription("하꾜에 갇팀")
+               //         .setImageUrl(Uri.parse("http://cfile28.uf.tistory.com/image/2056A53D5139F7A301C2BA"))
+               //         .build();
+                //shareDialog.show(linkContent);
+                //act.finish();
                 accessTokenTracker = new AccessTokenTracker() {
                     @Override
                     protected void onCurrentAccessTokenChanged(

@@ -37,12 +37,16 @@ import java.io.OutputStream;
  */
 public class CreateFileActivity extends BaseDemoActivity {
     private static final String TAG = "oss/CreateFileActivity";
-    SharedPreferences prefs = getSharedPreferences("PrefName", MODE_PRIVATE);
-    SharedPreferences.Editor editor = prefs.edit();
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     @Override
     public void onConnected(Bundle connectionHint) {
         super.onConnected(connectionHint);
+
+        prefs = getSharedPreferences("PrefName", MODE_PRIVATE);
+        editor = prefs.edit();
+
         // create new contents resource
         Drive.DriveApi.newDriveContents(getGoogleApiClient())
                 .setResultCallback(driveContentsCallback);
