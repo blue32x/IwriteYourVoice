@@ -15,7 +15,6 @@
 package com.recorda.recorda;
 
 import android.app.Activity;
-import android.app.Service;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
@@ -94,7 +93,7 @@ public abstract class GoogleDriveBaseActivity extends Activity implements
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
-            Intent data) {
+                                    Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_RESOLUTION && resultCode == RESULT_OK) {
             mGoogleApiClient.connect();
@@ -160,6 +159,6 @@ public abstract class GoogleDriveBaseActivity extends Activity implements
      * Getter for the {@code GoogleApiClient}.
      */
     public GoogleApiClient getGoogleApiClient() {
-      return mGoogleApiClient;
+        return mGoogleApiClient;
     }
 }

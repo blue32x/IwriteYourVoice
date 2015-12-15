@@ -39,8 +39,8 @@ import java.io.OutputStream;
 /**
  * An activity to illustrate how to create a file.
  */
-public class GoogleDriveCreateFileService extends GoogleDriveBaseActivity {
-    private static final String TAG = "oss/GoogleDriveCreateFileService";
+public class GoogleDriveCreateFileActivity extends GoogleDriveBaseActivity {
+    private static final String TAG = "oss/GoogleDriveCreateFileActivity";
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
